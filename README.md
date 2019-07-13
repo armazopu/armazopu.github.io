@@ -253,11 +253,11 @@ V2Ray 状态: 正在运行  /  Caddy 状态: 正在运行
 
 ## Enable Cloudflare
 
-On the Cloudflare site, on the DNS tab for your site, click the gray icon under Status to make the cloud go orange. This means Cloudflare is active for HTTP proxying as well as DNS resolution.
+On the Cloudflare site, on the **DNS** tab for your site, click the gray icon under Status to make the cloud go orange. This means Cloudflare is active for HTTP proxying as well as DNS resolution.
 
 ![Cloudflare active for HTTP as well as DNS](ss786.png)
 
-Go to the Crypto tab. Set SSL to Off. Then set SSL back to Full. Make sure you see Universal SSL Status: Active Certificate.
+Go to the **Crypto** tab. Set SSL to **Off**. Then set SSL back to **Full**. Make sure you see Universal SSL Status: Active Certificate.
 
 ## Client
 
