@@ -288,3 +288,7 @@ Now open Firefox. In the menu in the top right corner, click **Options**. Scroll
 Check your IP address on a site such as [https://ipchicken.com](https://ipchicken.com)
 
 ![IP Chicken](ss790.png)
+
+## Support
+
+Post your issue on [https://github.com/233boy/v2ray/issues](https://github.com/233boy/v2ray/issues).
