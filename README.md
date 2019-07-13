@@ -25,13 +25,19 @@ Digital Ocean calls each VPS a "droplet." The author of the script, 233boy, reco
 
 On the Freenom website , take out your choice of domain name. When you check for availability, the choices for free top-level domains (TLD) are tk, ml, ga, cf, and gq. The default duration of the free domain names is 3 months before renewal, but you can change this to 12 months before renewal if you wish. If you are using Freenom for the first time, you can create your account with your email address, or you can use a social login. If you use an email address, you will need to click a link in the verification email Freenom sends you. We will use an example domain of rayscript.ml.
 
+![Domain name from Freenom](ss780.png)
+
 ## Add Domain Name to Cloudflare
 
-Go to the Cloudflare website and log in. Add your new site to Cloudflare. Select the free plan. The Cloudflare DNS query will return nothing because you did not add any DNS records yet. Therefore add a DNS type A record in Cloudflare pointing to your VPS IPv4 address. The orange cloud icon means the site is active on Cloudflare. Temporarily click the orange icon under Status to make it go gray. This means Cloudflare will do only DNS resolution for now. Cloudflare will inform you of the two nameservers to use. Our examples are amy.ns.cloudflare.com and bart.ns.cloudflare.com.
+Go to the Cloudflare website and log in. Add your new site to Cloudflare. Select the free plan. The Cloudflare DNS query will return nothing because you did not add any DNS records yet. Therefore add a DNS type A record in Cloudflare pointing to your VPS IPv4 address. The orange cloud icon means the site is active on Cloudflare. Temporarily click the orange icon under Status to make it go gray. This means Cloudflare will do only DNS resolution for now. Cloudflare will inform you of the two nameservers to use. Our examples are `amy.ns.cloudflare.com` and `bart.ns.cloudflare.com`.
+
+![Cloudflare DNS only](ss782.png)
 
 ## Change Nameservers to Cloudflare
 
-Back on Freenom, select your site, and click Manage Domain. Under Management Tools, click Nameservers. Change Nameservers to the two nameservers provided to you by Cloudflare. 
+Back on Freenom, select your site, and click Manage Domain. Under Management Tools, click Nameservers. Change Nameservers to the two nameservers provided to you by Cloudflare.
+
+![Custom nameservers in Freenom](ss783.png)
 
 Cloudflare will wait for the nameserver change to happen. A message says this can take up to 24 hours, but it is usually much less. You will get an email when your domain name is active on Cloudflare.
 
@@ -40,6 +46,8 @@ Cloudflare will wait for the nameserver change to happen. A message says this ca
 Digital Ocean emails you the root password to use for your initial login. 
 
 Open XSHELL 6. Add a new session, protocol SSH, host of your server IP address, and port 22. Click Connect to SSH into your VPS. The first time you connect to a new server, you must Accept and Save its host key. The user name on Digital Ocean is root. The initial password was in your email from Digital Ocean. You must change the initial password the first time you login.
+
+![XSHELL first login to a new VPS](ss784.png)
 
 For Debian or Ubuntu users, update your system and install curl like this:
 
@@ -201,6 +209,8 @@ V2Ray 客户端使用教程: https://233v2.com/post/4/
 提示: 输入 v2ray url 可生成 vmess URL 链接 / 输入 v2ray qr 可生成二维码链接
 ```
 
+![Parameters for V2Ray client](ss785.png)
+
 At this point, you can enter:
 
 ```
@@ -241,6 +251,8 @@ V2Ray 状态: 正在运行  /  Caddy 状态: 正在运行
 
 On the Cloudflare site, on the DNS tab for your site, click the gray icon under Status to make the cloud go orange. This means Cloudflare is active for HTTP proxying as well as DNS resolution.
 
+![Cloudflare active for HTTP as well as DNS](ss786.png)
+
 Go to the Crypto tab. Set SSL to Off then back to Full. Make sure you have Universal SSL Status: Active Certificate.
 
 ## Client
@@ -251,6 +263,8 @@ We will use V2RayN on Windows as our client. After you launch V2RayN, the icon t
 * Scan the QR code on the screen (扫描屏幕上的二维码)
 
 These correspond to the server commands v2ray url and v2ray qr. Whichever method you choose, your server parameters are imported. 
+
+![Parameters imported to V2RayN](ss788.png)
 
 Click the Open button. Messages appear such as:
 
@@ -265,4 +279,8 @@ A unified platform for anti-censorship.
 
 Now open Firefox. In the menu in the top right corner, click Options. Scroll down to the bottom, and where you see Network Settings, click Settings. Select Manual proxy configuration. In SOCKS Host put 127.0.0.1. For Port put 10808, which is the port V2RayN now uses. Select SOCKS v5. Select Proxy DNS when using SOCKS v5. Press OK to save your settings. Close the about:preferences tab.
 
-Check your IP address on a site such as https://ipchicken.com
+![Firefox manual proxy configuration for SOCKS5](ss789.png)
+
+Check your IP address on a site such as [https://ipchicken.com](https://ipchicken.com)
+
+![IP Chicken](ss790.png)
