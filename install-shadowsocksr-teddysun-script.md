@@ -91,7 +91,7 @@ Execute the script:
 
 ## Details of Script
 
-The script prmopts you to enter a password for ShadowsocksR. You can use one of your strong passwords from above, e.g.:
+The script prompts you to enter a password for ShadowsocksR. You can use one of your strong passwords from above, e.g.:
 
 ```
 m754aJkf8vE2W3H
@@ -164,9 +164,9 @@ Press any key to start...or Press Ctrl+C to cancel
 ```
 
 * If you press **Ctrl**+**c**, the script will stop at this point. 
-* If you press **Enter**, it will carry out the installation and configuration of ShadowsocksR.
+* If you press **Enter**, it will carry on with the installation and configuration of ShadowsocksR.
 
-At the end of the script, the results are displayed. For example:
+When the script finishes running, it displays a summary. For example:
 
 ```
 Your Server IP        :  159.65.138.24 
@@ -176,6 +176,8 @@ Your Protocol         :  origin
 Your obfs             :  plain 
 Your Encryption Method:  aes-256-cfb 
 ```
+
+Make a note of these values. You will need them on the client.
 
 ![Results of running Teddysun ShadowsocksR script](ss795.png)
 
