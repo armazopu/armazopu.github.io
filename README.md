@@ -1,37 +1,22 @@
-## Welcome to GitHub Pages
+# Install V2ray + WebSocket + TLS + Caddy + CDN Using 233boy Script
 
-You can use the [editor on GitHub](https://github.com/armazopu/armazopu.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+## Why This Script?
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+V2Ray is the second most popular proxy software after Shadowsocks/ShadowsocksR, but the configuration is slightly complicated. The 233boy/v2ray script was written to make installation easier and more convenient for newbies. The source is located on Github at https://github.com/233boy/v2ray. It supports most features of V2Ray, including various transport protocols, WebSocket + TLS, HTTP/2, Shadowsocks, dynamic ports, integrated BBR, and speed optimization.
 
-### Markdown
+## Before You Begin
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Before you download and run the script, you will need to:
 
-```markdown
-Syntax highlighted code block
+* Open an account with a VPS provider. We will use the example of Digital Ocean, but you can choose another VPS provider if you prefer, e.g. Bandwagon Host.
+* Have an account with Freenom. Do not worry if you do not have one. The Freenom site will step you through creating an account when you register your first domain name.
+* Open an account with Cloudflare.
+* Install a terminal emulator on your PC. We will use XSHELL 6 from NetSarang. They offer a free license for home and school users. You could alternatively use PuTTY.
+* Assuming you have a Windows PC, download and unzip the v2rayN-Core.zip V2RayN GUI client for Windows from Github.
+* Download and install Firefox browser, which we will use for connecting through V2RayN to the VPS.
 
-# Header 1
-## Header 2
-### Header 3
+## Create VPS
 
-- Bulleted
-- List
+Digital Ocean calls each VPS a "droplet." The author of the script, 233boy, recommends that you create your VPS with Debian 9 or later, or with a recent version of Ubuntu. This is because the Linux kernel versions 4.9 and later support the BBR congestion control algorithm. However, you can also use CentOS 7 if you prefer. The smallest size of VPS (1 GB of RAM) is fine. We will use the Singapore location. You can change the default server name to something more meaningful if you wish.
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/armazopu/armazopu.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+![Digital Ocean create VPS in Singapore](ss779.png)
