@@ -1,4 +1,4 @@
-# Install V2ray + WebSocket + TLS + Caddy + CDN Using 233boy Script
+# Install V2Ray + WebSocket + TLS + Caddy + CDN Using 233boy Script
 
 ## Why This Script?
 
@@ -159,21 +159,21 @@ In the lines above, you are asked if the host name resolution is correct. Assumi
 (是否自动配置 TLS: [Y/N]):
 ```
 
-When asked if you want to automatically configure TLS, put **y** for yes.
+In the lines above, you are asked if you want to automatically configure TLS. Put **y** for yes.
 
 ```
 是否开启 网站伪装 和 路径分流 [Y/N]
 (默认: [N]):
 ```
 
-In the lines above you are asked if you want website camouflage. Put the default **n** for no.
+In the lines above, you are asked if you want website camouflage. Put the default **n** for no.
 
 ```
 是否开启广告拦截(会影响性能) [Y/N]
 (默认 [N]):
 ```
 
-When asked if you want ad blocking (which will affect performance), put the default **n** for no.
+In the lines above, you are asked if you want ad blocking (which will affect performance). Put the default **n** for no.
 
 ```
 是否配置 Shadowsocks [Y/N]
@@ -195,7 +195,7 @@ V2Ray 端口 = 62684
 按 Enter 回车键 继续....或按 Ctrl + C 取消.
 ```
 
-Above, your installation choices are redisplayed for you to confirm. Press **Enter** to confirm (or **Ctrl**+**c** to cancel). The installation script then runs. At the end, the parameters for the client are displayed. For example:
+In the sample output above, your installation choices are redisplayed for you to confirm. Press **Enter** to confirm your choices or **Ctrl**+**c** to cancel. Assuming you press **Enter**, the installation script then runs. At the end of the run, the parameters for the client are displayed. For example:
 
 ```
 ---------- V2Ray 配置信息 -------------
