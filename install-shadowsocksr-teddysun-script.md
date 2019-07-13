@@ -10,8 +10,8 @@ Before you download and run the script, you will need to:
 
 * Open an account with a VPS provider. We will use the example of Digital Ocean, but you can choose another VPS provider if you prefer, e.g. Bandwagon Host.
 * Install a terminal emulator on your PC. We will use XSHELL 6 from NetSarang. They offer a free license for home and school users. You could alternatively use PuTTY.
-* Assuming you have a Windows PC, download and unzip the ShadowsocksR-win-4.9.0.zip client for Windows from[https://github.com/shadowsocksrr/shadowsocksr-csharp/releases](https://github.com/shadowsocksrr/shadowsocksr-csharp/releases).
-* Download and install Firefox browser, which we will use for connecting through the ShadowsocksR client to the VPS.
+* Assuming you have a Windows PC, download and unzip the ShadowsocksR-win-4.9.0.zip client for Windows from [https://github.com/shadowsocksrr/shadowsocksr-csharp/releases](https://github.com/shadowsocksrr/shadowsocksr-csharp/releases).
+* You can use Edge, Firefox, or Chrome to reach your server. We will use Firefox in this example.
 * You are going to need two passwords, one as a new root password for your server, and one for your ShadowsocksR password. You can generate strong passwords at [https://strongpasswordgenerator.com/](https://strongpasswordgenerator.com/). Examples:
 
 ```
@@ -21,7 +21,7 @@ m754aJkf8vE2W3H
 
 ## Create VPS
 
-Digital Ocean calls each VPS a "droplet." This script can be run on CentOS, Debian, or Ubuntu. The smallest size of VPS (1 GB of RAM) is more than enough. In this post, we will use a CentOS 7 droplet and the Singapore location. You can change the default server name to something more meaningful if you wish.
+Digital Ocean calls each VPS a "droplet." This script can run on CentOS, Debian, or Ubuntu. The smallest size of droplet (1 GB of RAM) is more than enough. In this post, we will use a CentOS 7 droplet and the Singapore location. 
 
 ## Login to VPS for First Time
 
@@ -91,13 +91,13 @@ Execute the script:
 
 ## Details of Script
 
-You are asked to enter a password. You can use one of your strong passwords from above, e.g.:
+The script prmopts you to enter a password for ShadowsocksR. You can use one of your strong passwords from above, e.g.:
 
 ```
 m754aJkf8vE2W3H
 ```
 
-The script generates a random port number. You can either just press **Enter** to leave it as it, or enter a port number of your own choice.
+The script generates a random port number. You can either press **Enter** to leave the generated port number as it is, or enter a port number of your own choice.
 
 You are asked to choose a stream cipher for ShadowsocksR:
 
@@ -120,7 +120,7 @@ You are asked to choose a stream cipher for ShadowsocksR:
 16) rc4-md5
 ```
 
-You can either just press **Enter** to leave it as the default of `aes-256-cfb`, or enter a cipher of your own choice.
+You can either press **Enter** to leave the cipher at the default of `aes-256-cfb`, or enter a cipher of your own choice.
 
 You are asked to choose a protocol for ShadowsocksR:
 
@@ -139,7 +139,7 @@ You are asked to choose a protocol for ShadowsocksR:
 12) auth_chain_f
 ```
 
-You can either just press **Enter** to leave it as the default of `origin`, or enter a protocol of your own choice.
+You can either press **Enter** to leave the protocol as the default of `origin`, or enter a protocol of your own choice.
 
 You are asked to choose an obfuscation technique for ShadowsocksR:
 
@@ -155,7 +155,7 @@ You are asked to choose an obfuscation technique for ShadowsocksR:
 9) tls1.2_ticket_fastauth_compatible
 ```
 
-You can either just press **Enter** to leave it as the default of `plain`, or enter an obfuscation technique of your own choice.
+You can either press **Enter** to leave obfuscation at the default of `plain`, or enter an obfuscation technique of your own choice.
 
 A message then appears:
 
@@ -164,9 +164,9 @@ Press any key to start...or Press Ctrl+C to cancel
 ```
 
 * If you press **Ctrl**+**c**, the script will stop at this point. 
-* If you press **Enter**, it will continue and carry out the installation and configuration of ShadowsocksR.
+* If you press **Enter**, it will carry out the installation and configuration of ShadowsocksR.
 
-The results are displayed. For example:
+At the end of the script, the results are displayed. For example:
 
 ```
 Your Server IP        :  159.65.138.24 
@@ -181,7 +181,7 @@ Your Encryption Method:  aes-256-cfb
 
 You will need these values when you configure the client.
 
-Behind the scenes, the script has placed these values in a file named `/etc/shadowsocks.json`. Its contents will look something like this:
+Technical note: Behind the scenes, the script has placed these values in a file named `/etc/shadowsocks.json`. Its contents will look something like this:
 
 ```
 {
@@ -208,16 +208,16 @@ Behind the scenes, the script has placed these values in a file named `/etc/shad
 
 We will use shadowsocksr-csharp, release ShadowsocksR-win-4.9.0, as our client. 
 
-For >= Windows 8 or with .Net 4.0, use ShadowsocksR-dotnet4.0.exe.
-For <= Windows 7 or with .Net 2.0, use ShadowsocksR-dotnet2.0.exe.
+* For >= Windows 8 or with .NET 4.0, use ShadowsocksR-dotnet4.0.exe.
+* For <= Windows 7 or with .NET 2.0, use ShadowsocksR-dotnet2.0.exe.
 
-After you launch ShadowsocksR-win-4.9.0, the icon to open the ShadowsocksR control panel is in the system tray, which is at the bottom right of your Windows desktop. Right-click on it, then select **Servers** > **Edit Servers**. Enter the values from your server configuration. 
+After you launch ShadowsocksR-win-4.9.0, the icon to open the ShadowsocksR control panel is in the system tray, which is at the bottom right of your Windows desktop. Right-click on it, then select **Servers** > **Edit Servers**. Enter the values that match your server configuration. 
 
 ![ShadowsocksR edit servers](ss797.png)
 
 Click **OK**.
 
-Now open Firefox. Since ShadowsocksR defaults to Global mode, there is no need to change the proxy settings in Firefox itself.
+Now open your browser. We will use Firefox as an example. Since ShadowsocksR defaults to Global mode, there is no need to change the proxy settings in Firefox itself.
 
 Check your IP address on a site such as [https://ipchicken.com](https://ipchicken.com)
 
