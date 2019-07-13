@@ -29,23 +29,27 @@ On the Freenom website , take out your choice of domain name. When you check for
 
 ## Add Domain Name to Cloudflare
 
-Go to the Cloudflare website and log in. Add your new site to Cloudflare. Select the free plan. The Cloudflare DNS query will return nothing because you did not add any DNS records yet. Therefore add a DNS type A record in Cloudflare pointing to your VPS IPv4 address. The orange cloud icon means the site is active on Cloudflare. Temporarily click the orange icon under Status to make it go gray. This means Cloudflare will do only DNS resolution for now. Cloudflare will inform you of the two nameservers to use. Our examples are `amy.ns.cloudflare.com` and `bart.ns.cloudflare.com`.
+Go to the Cloudflare website, and log in to your account. Add your new site to Cloudflare. Select the free plan. The Cloudflare DNS query will return nothing because you did not add any DNS records yet. Therefore add a DNS type A record in Cloudflare pointing to your VPS IPv4 address. 
+
+The orange cloud icon means the site is active on Cloudflare. Temporarily click the orange icon under Status to make it go gray. This means Cloudflare will do only DNS resolution for now.
 
 ![Cloudflare DNS only](ss782.png)
 
+Cloudflare will inform you of the two nameservers to use. Our examples are `amy.ns.cloudflare.com` and `bart.ns.cloudflare.com`.
+
 ## Change Nameservers to Cloudflare
 
-Back on Freenom, select your site, and click Manage Domain. Under Management Tools, click Nameservers. Change Nameservers to the two nameservers provided to you by Cloudflare.
+Back on Freenom, select your site, and click Manage Domain. Under Management Tools, click Nameservers. Change the nameservers to the two custom nameservers provided to you by Cloudflare.
 
 ![Custom nameservers in Freenom](ss783.png)
 
-Cloudflare will wait for the nameserver change to happen. A message says this can take up to 24 hours, but it is usually much less. You will get an email when your domain name is active on Cloudflare.
+Cloudflare will wait for the nameserver change to propagate. A message says this can take up to 24 hours, but it is usually much less. You will get an email when your domain name is active on Cloudflare.
 
 ## Login to VPS for First Time
 
 Digital Ocean emails you the root password to use for your initial login. 
 
-Open XSHELL 6. Add a new session, protocol SSH, host of your server IP address, and port 22. Click Connect to SSH into your VPS. The first time you connect to a new server, you must Accept and Save its host key. The user name on Digital Ocean is root. The initial password was in your email from Digital Ocean. You must change the initial password the first time you login.
+Open XSHELL 6. Add a new session, with protocol SSH, the host being your server IP address, and port 22. Click Connect to SSH into your VPS. The first time you connect to a new server, you must Accept and Save its host key. The user name on Digital Ocean is root. The initial password was in your email from Digital Ocean. You must change the initial password the first time you login.
 
 ![XSHELL first login to a new VPS](ss784.png)
 
@@ -127,14 +131,14 @@ Select **4** for WebSocket + TLS, and press **Enter**.
 (默认端口: 62864):
 ```
 
-Next you are asked for a port number. Press **Enter** to accept the generated value, which in our example is 62864.
+In the lines above, you are being asked for a port number. Press **Enter** to accept the generated value, which in our example is `62864`.
 
 ```
 请输入一个 正确的域名，一定一定一定要正确，不！能！出！错！
 (例如：233blog.com): 
 ```
 
-Now you are asked for a host name, such as 233blog.com. Our host name is rayscript.ml. After your have typed it, press Enter.
+In the lines above, you are asked for a host name, such as `233blog.com`. Our host name is `rayscript.ml`. After your have typed your host name, press **Enter**.
 
 ```
 请将 rayscript.ml 解析到: 134.209.110.159
@@ -144,7 +148,7 @@ Now you are asked for a host name, such as 233blog.com. Our host name is rayscri
 (是否已经正确解析: [Y]):
 ```
 
-You are asked if the domain name resolution is correct. If it is, put Y for yes.
+In the lines above, you are asked if the host name resolution is correct. Assuming it is, put **y** for yes.
 
 ```
 安装 Caddy 来实现 自动配置 TLS
@@ -155,28 +159,28 @@ You are asked if the domain name resolution is correct. If it is, put Y for yes.
 (是否自动配置 TLS: [Y/N]):
 ```
 
-When asked if you want to automatically configure TLS, put Y for yes.
+When asked if you want to automatically configure TLS, put **y** for yes.
 
 ```
 是否开启 网站伪装 和 路径分流 [Y/N]
 (默认: [N]):
 ```
 
-For website camouflage, put the default N for no.
+In the lines above you are asked if you want website camouflage. Put the default **n** for no.
 
 ```
 是否开启广告拦截(会影响性能) [Y/N]
 (默认 [N]):
 ```
 
-When asked if you want ad blocking (which will affect performance), put the default N for no.
+When asked if you want ad blocking (which will affect performance), put the default **n** for no.
 
 ```
 是否配置 Shadowsocks [Y/N]
 (默认 [N]): 
 ```
 
-When asked whether you want to configure Shadowsocks, put the default N for no.
+In the lines above, you are asked whether you want to configure Shadowsocks. Put the default **n** for no.
 
 ```
 ....准备安装了咯..看看有毛有配置正确了...
@@ -191,7 +195,7 @@ V2Ray 端口 = 62684
 按 Enter 回车键 继续....或按 Ctrl + C 取消.
 ```
 
-Now your installation choices are redisplayed for you to confirm. Press Enter to confirm (or Ctrl+c to cancel). The installation script then runs. At the end, the parameters for the client are displayed. For example:
+Above, your installation choices are redisplayed for you to confirm. Press **Enter** to confirm (or **Ctrl**+**c** to cancel). The installation script then runs. At the end, the parameters for the client are displayed. For example:
 
 ```
 ---------- V2Ray 配置信息 -------------
@@ -223,7 +227,7 @@ to generate a Vmess URL link. For example:
 vmess://ewoidiI6ICIyIiwKInBzIjogIjIzM3YyLmNvbV9yYXlzY3JpcHQubWwiLAoiYWRkIjogInJheXNjcmlwdC5tbCIsCiJwb3J0IjogIjQ0MyIsCiJpZCI6ICI3MTg0MmVjOC0xZDY2LTRhZDMtOGViNC0zOWYwMjgyNmYyNjYiLAoiYWlkIjogIjIzMyIsCiJuZXQiOiAid3MiLAoidHlwZSI6ICJub25lIiwKImhvc3QiOiAicmF5c2NyaXB0Lm1sIiwKInBhdGgiOiAiLyIsCiJ0bHMiOiAidGxzIgp9Cg==
 ```
 
-You can also type:
+You can also enter:
 
 ```
 v2ray qr 
@@ -253,7 +257,7 @@ On the Cloudflare site, on the DNS tab for your site, click the gray icon under 
 
 ![Cloudflare active for HTTP as well as DNS](ss786.png)
 
-Go to the Crypto tab. Set SSL to Off then back to Full. Make sure you have Universal SSL Status: Active Certificate.
+Go to the Crypto tab. Set SSL to Off. Then set SSL back to Full. Make sure you see Universal SSL Status: Active Certificate.
 
 ## Client
 
@@ -262,11 +266,11 @@ We will use V2RayN on Windows as our client. After you launch V2RayN, the icon t
 * Import URL from clipboard (从剪贴板导入批量URL)
 * Scan the QR code on the screen (扫描屏幕上的二维码)
 
-These correspond to the server commands v2ray url and v2ray qr. Whichever method you choose, your server parameters are imported. 
+These correspond to the server commands `v2ray url` and `v2ray qr`. Whichever method you choose, your server parameters are imported. 
 
 ![Parameters imported to V2RayN](ss788.png)
 
-Click the Open button. Messages appear such as:
+Click the Open button. In the box at the bottom of the V2RayN window, messages appear such as:
 
 ```
 配置成功
@@ -277,7 +281,7 @@ A unified platform for anti-censorship.
 2019/07/13 07:23:52 [Warning] v2ray.com/core: V2Ray 4.18.0 started
 ```
 
-Now open Firefox. In the menu in the top right corner, click Options. Scroll down to the bottom, and where you see Network Settings, click Settings. Select Manual proxy configuration. In SOCKS Host put 127.0.0.1. For Port put 10808, which is the port V2RayN now uses. Select SOCKS v5. Select Proxy DNS when using SOCKS v5. Press OK to save your settings. Close the about:preferences tab.
+Now open Firefox. In the menu in the top right corner, click **Options**. Scroll down to the bottom, and where you see Network Settings, click **Settings**. Select **Manual proxy configuration**. In SOCKS Host put `127.0.0.1`. For Port put `10808`, which is the port V2RayN now uses. Select **SOCKS v5**. Select **Proxy DNS when using SOCKS v5**. Press **OK** to save your settings. Close the `about:preferences` tab.
 
 ![Firefox manual proxy configuration for SOCKS5](ss789.png)
 
