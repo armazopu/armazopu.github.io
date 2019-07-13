@@ -27,7 +27,19 @@ Digital Ocean calls each VPS a "droplet." This script can be run on CentOS, Debi
 
 Digital Ocean emails you the root password to use for your initial login. 
 
-Open XSHELL 6. Add a new session, with protocol SSH, the host being your server IP address, and port 22. Click Connect to SSH into your VPS. The first time you connect to a new server, you must Accept and Save its host key. The user name on Digital Ocean is root. The initial password was in your email from Digital Ocean. You must change the initial password the first time you login. You can use one of your strong passwords from above, e.g.:
+Open XSHELL 6. Add a new session, with protocol SSH, the host being your server IP address, and port 22. 
+
+![XSHELL add new session](ss791.png)
+
+Click Connect to SSH into your VPS. The first time you connect to a new server, you must Accept and Save its host key. The user name on Digital Ocean is `root`. 
+
+![Enter user name into XSHELL](ss792.png)
+
+The initial password was in your email from Digital Ocean. 
+
+![Enter initial password into XSHELL](ss793.png)
+
+You must change the initial password the first time you login. You can use one of your strong passwords from above, e.g.:
 
 ```
 uWP5h3dD29t8jPB
@@ -74,6 +86,8 @@ Execute the script:
 ```
 ./shadowsocksR.sh 2>&1 | tee shadowsocksR.log
 ```
+
+![Download and run Teddysun ShadowsocksR script](ss794.png)
 
 ## Details of Script
 
@@ -163,6 +177,8 @@ Your obfs             :  plain
 Your Encryption Method:  aes-256-cfb 
 ```
 
+![Results of running Teddysun ShadowsocksR script](ss795.png)
+
 You will need these values when you configure the client.
 
 Behind the scenes, the script has placed these values in a file named `/etc/shadowsocks.json`. Its contents will look something like this:
@@ -195,7 +211,11 @@ We will use shadowsocksr-csharp, release ShadowsocksR-win-4.9.0, as our client.
 For >= Windows 8 or with .Net 4.0, use ShadowsocksR-dotnet4.0.exe.
 For <= Windows 7 or with .Net 2.0, use ShadowsocksR-dotnet2.0.exe.
 
-After you launch ShadowsocksR-win-4.9.0, the icon to open the ShadowsocksR control panel is in the system tray, which is at the bottom right of your Windows desktop. Right-click on it, then select Servers > Edit Servers. Enter the values from your server configuration. Click **OK**.
+After you launch ShadowsocksR-win-4.9.0, the icon to open the ShadowsocksR control panel is in the system tray, which is at the bottom right of your Windows desktop. Right-click on it, then select **Servers** > **Edit Servers**. Enter the values from your server configuration. 
+
+![ShadowsocksR edit servers](ss797.png)
+
+Click **OK**.
 
 Now open Firefox. Since ShadowsocksR defaults to Global mode, there is no need to change the proxy settings in Firefox itself.
 
