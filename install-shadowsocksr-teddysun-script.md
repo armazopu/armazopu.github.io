@@ -181,8 +181,6 @@ Make a note of these values. You will need them on the client.
 
 ![Results of running Teddysun ShadowsocksR script](ss795.png)
 
-You will need these values when you configure the client.
-
 Technical note: Behind the scenes, the script has placed these values in a file named `/etc/shadowsocks.json`. Its contents will look something like this:
 
 ```
